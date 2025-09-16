@@ -2,7 +2,53 @@
 <html lang="ko">
 <meta charset="utf-8">
 <title>test_UI</title>
+<link rel="stylesheet" href="reset.css">
+<style>
+/* test */
+body{
+  color: orange;
+  font-weight: bold;
+}
+
+.header{
+  width: 100%;
+  max-width: 100%;
+  background-color: brown;
+  text-align: center;
+  height: 64px;
+}
+.body{
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  background-color: beige;
+  text-align: center;
+}
+.body .sideL, .body .sideR{
+  width: 20%;
+  max-width: 20%;
+}
+.body .main{
+  width: 60%;
+  max-width: 60%;
+  background-color: bisque;
+}
+
+.footer{
+  width: 100%;
+  max-width: 100%;
+  background-color: brown;
+  text-align: center;
+  height: 80px;
+}
+</style>
 </html>
 <body>
-    
+  <div class="header">--header--</div>
+  <div class="body">
+    <div class="sideL">--sideL--</div>
+    <div class="main">--main--</div>
+    <div class="sideR">--sideR--</div>
+  </div>
+  <div class="footer">--footer--</div>
 </body>
