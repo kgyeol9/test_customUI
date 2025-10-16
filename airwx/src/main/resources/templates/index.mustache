@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>AirWX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{font-family:system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin:24px;}
+        .card{border:1px solid #ddd; padding:16px; border-radius:12px; max-width:620px;}
+        .btn{display:inline-block; padding:10px 14px; border:1px solid #222; border-radius:8px;
+             background:#fff; text-decoration:none; cursor:pointer; margin-right:8px;}
+        .hint{color:#666; font-size:14px;}
+        hr{border:none; border-top:1px solid #eee; margin:18px 0;}
+    </style>
+</head>
+<body>
+<h1>AirWX</h1>
+
+<div class="card">
+    <h3>날씨</h3>
+    <p>시계열 적재 수: <b>{{wxCount}}</b></p>
+    <form method="post" action="/ingest/weather" style="margin-top:12px">
+        <button class="btn" type="submit">수동 적재 (POST)</button>
+    </form>
+    <p style="margin-top:10px">
+        <a class="btn" href="/ingest/weather">GET 실행 (실데이터)</a>
+        <a class="btn" href="/ingest/weather?mock=1">GET 실행 (목데이터)</a>
+    </p>
+
+    <hr>
+
+    <h3>대기질</h3>
+    <p>시계열 적재 수: <b>{{aqCount}}</b></p>
+    <form method="post" action="/ingest/air" style="margin-top:12px">
+        <button class="btn" type="submit">수동 적재 (POST)</button>
+    </form>
+    <p style="margin-top:10px">
+        <a class="btn" href="/ingest/air">GET 실행 (실데이터)</a>
+        <a class="btn" href="/ingest/air?mock=1">GET 실행 (목데이터)</a>
+    </p>
+
+    <p class="hint">스케줄러 켜두면 주기적으로 적재되게 확장할 수 있어요.</p>
+</div>
+
+<p style="margin-top:16px">
+    <a class="btn" href="/h2">H2 Console</a>
+    <span class="hint">— JDBC: <code>jdbc:h2:file:./.h2/airwx</code> / user: <code>sa</code></span>
+</p>
+</body>
+</html>
